@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,7 +52,7 @@ public class Usuario implements UserDetails {
 		this.sexo = sexo;
 		this.dataDeNascimento = dataDeNascimento;
 		this.idade = idade;
-		this.password = password;
+		this.password = new BCryptPasswordEncoder().encode(password);
 	}
 	
 	@Override
