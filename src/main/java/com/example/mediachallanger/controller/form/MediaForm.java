@@ -1,6 +1,6 @@
 package com.example.mediachallanger.controller.form;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
@@ -8,8 +8,10 @@ import com.example.mediachallanger.model.Media;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class MediaForm {
 	
 	private byte[] media;
@@ -23,7 +25,7 @@ public class MediaForm {
 	
 	@NotNull
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataDeCriação;
+	private Date dataDeCriacao;
 	
 	public void setMedia(byte[] bytes) {
 		this.media = bytes;
@@ -34,7 +36,7 @@ public class MediaForm {
 	}
 	
 	public Media converter() {
-		Media media = new Media(this.media, tipo, nome, descricao, latitude, longitude, dataDeCriação);
+		Media media = new Media(this.media, tipo, nome, descricao, latitude, longitude, dataDeCriacao);
 		
 		return media;
 	}

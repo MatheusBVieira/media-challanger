@@ -1,6 +1,7 @@
 package com.example.mediachallanger.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -34,21 +35,21 @@ public class Media {
 	private String descricao;
 	private String latitude;
 	private String longitude;
-	private LocalDate dataDeCriação;
+	private Date dataDeCriacao;
 	private LocalDate dataDeUpload;
-	private LocalDate dataDaPublicação;
+	private LocalDate dataDaPublicacao;
 	
 	public Media(byte[] media, String tipo, String nome, String descricao, String latitude, String longitude,
-			LocalDate dataDeCriação) {
+			Date dataDeCriacao) {
 		this.media = media;
 		this.tipo = tipo;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.dataDeCriação = dataDeCriação;
+		this.dataDeCriacao = dataDeCriacao;
 		this.dataDeUpload = LocalDate.now();
-		this.dataDaPublicação = LocalDate.now();
+		this.dataDaPublicacao = LocalDate.now();
 	}
 	
 	
